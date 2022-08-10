@@ -5,16 +5,19 @@ function init() {
 }
 init();
 
-let color = '#';
 
-//function makes a random color
+//function making a random color when called upon
 function randomColor() {
     let letters = '0123456789ABCDEF';
+    let color = "#";
     for (let i = 0; i < 6; i++) {
         color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
+    
 }
+
+
 
 //function makes a 16 x 16 grid of divs
 function makeGrid() {
@@ -34,9 +37,8 @@ function changeColor() {
     const squares = document.querySelectorAll('.square');
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
-            randomColor();
-            changeColor();
-            square.style.backgroundColor = color;
+            square.style.backgroundColor = randomColor();
+            console.log("Added colour to square " + randomColor());
         });
     });
 }
