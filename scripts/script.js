@@ -14,13 +14,14 @@ function randomColor() {
         color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
-    
+
 }
 
 
 
-//function makes a 16 x 16 grid of divs
+//function makes a 16 x 16 grid at page load
 function makeGrid() {
+    deleteGrid()
     const container = document.querySelector('#container');
     for (let i = 0; i < 16; i++) {
         for (let j = 0; j < 16; j++) {
@@ -29,7 +30,51 @@ function makeGrid() {
             container.appendChild(square);
         }
     }
+    changeColor();
+    
 }
+//fuction deletes the grid and makes a new grid when called upon
+function bigCanvas() {
+    deleteGrid()
+    const container = document.querySelector('#container');
+    for (let i = 0; i < 64; i++) {
+        for (let j = 0; j < 64; j++) {
+            const square = document.createElement('div');
+            square.classList.add('square', 'squareSmall');
+            container.appendChild(square);
+        }
+    }
+    changeColor();
+
+}
+
+//function makes a new small grid when called upon
+function smallCanvas() {
+    deleteGrid()
+    changeColor();
+    const container = document.querySelector('#container');
+    for (let i = 0; i < 12; i++) {
+        for (let j = 0; j < 12; j++) {
+            const square = document.createElement('div');
+            square.classList.add('square', 'squareBig');
+            container.appendChild(square);
+        }
+    }
+    changeColor();
+
+}
+
+//function deletes all divs with the class of square
+function deleteGrid() {
+    changeColor();
+    const container = document.querySelector('#container');
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        container.removeChild(square);
+    });
+    console.log("Deleted grid");
+}
+
 
 
 //function to change the color of the divs when hovered over
@@ -43,7 +88,5 @@ function changeColor() {
     });
 }
 
-//function making random colors when divs are hovered over
 
 //random color generator
-
