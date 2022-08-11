@@ -294,41 +294,64 @@ function discoBall() {
 function discoBall2() {
     const squares = document.querySelectorAll('.square');
     squares.forEach((square) => {
-                square.addEventListener('mouseover', () => {
-                    square.style.opacity = 0.5;
-                    square.style.backgroundColor = "silver";
-                    square.style.borderRadius = "50%";
-                    square.style.paddingLeft = "20px";
-                    square.style.paddingRight = "20px";
-                    square.style.paddingTop = "20px";
-                    square.style.paddingBottom = "20px";
-                    square.addEventListener('mouseover', () => {
-                        for (let i = 0; i < 12; i++) {
-                            for (let j = 0; j < 12; j++) {
-                                const square = document.createElement('div');
-                                square.classList.add('discoSquare');
-                                container.appendChild(square);
-                            }
-                        }
-                    });
-
-                });
+        square.addEventListener('mouseover', () => {
+            square.style.opacity = 0.5;
+            square.style.backgroundColor = "silver";
+            square.style.borderRadius = "50%";
+            square.style.paddingLeft = "20px";
+            square.style.paddingRight = "20px";
+            square.style.paddingTop = "20px";
+            square.style.paddingBottom = "20px";
+            square.addEventListener('mouseover', () => {
+                for (let i = 0; i < 12; i++) {
+                    for (let j = 0; j < 12; j++) {
+                        const square = document.createElement('div');
+                        square.classList.add('discoSquare');
+                        container.appendChild(square);
+                    }
+                }
             });
-        }
 
-function mineSweeperMode () {
+        });
+    });
+}
+
+function mineSweeperMode() {
     const squares = document.querySelectorAll('.square');
     squares.forEach((square) => {
         square.addEventListener('mouseover', () => {
- 
+
         });
     });
-} 
+}
 
 //when clicked add class to all squares
 function addClassMineSweeper() {
     const squares = document.querySelectorAll('.square');
     squares.forEach((square) => {
-            square.classList.add('square','minesweeper');
+        square.classList.add('square', 'minesweeper');
+    });
+}
+
+function matrixMode() {
+                const squares = document.querySelectorAll('.square');
+                squares.forEach((square) => {
+                square.classList.add('square', 'matrixMode');
+                square.addEventListener('mouseover', () => {
+                });
+                });
+                digitalRain();
+            };
+
+function digitalRain() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.style.backgroundColor = "black";
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "#03A062";
+            square.innerHTML = "¤&£";
         });
-    }
+    });
+}
+
+//function creating string hello inside square
