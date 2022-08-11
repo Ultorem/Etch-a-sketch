@@ -1,7 +1,6 @@
 //const function making 16 square bracket divs 
 function init() {
     makeGrid();
-    changeColor();
 }
 init();
 
@@ -23,15 +22,14 @@ function randomColor() {
 function makeGrid() {
     deleteGrid()
     const container = document.querySelector('#container');
-    for (let i = 0; i < 16; i++) {
-        for (let j = 0; j < 16; j++) {
+    for (let i = 0; i < 32; i++) {
+        for (let j = 0; j < 32; j++) {
             const square = document.createElement('div');
             square.classList.add('square');
             container.appendChild(square);
         }
     }
-    changeColor();
-    
+
 }
 //fuction deletes the grid and makes a new grid when called upon
 function bigCanvas() {
@@ -51,7 +49,6 @@ function bigCanvas() {
 //function makes a new small grid when called upon
 function smallCanvas() {
     deleteGrid()
-    changeColor();
     const container = document.querySelector('#container');
     for (let i = 0; i < 12; i++) {
         for (let j = 0; j < 12; j++) {
@@ -66,7 +63,6 @@ function smallCanvas() {
 
 //function deletes all divs with the class of square
 function deleteGrid() {
-    changeColor();
     const container = document.querySelector('#container');
     const squares = document.querySelectorAll('.square');
     squares.forEach((square) => {
@@ -90,3 +86,232 @@ function changeColor() {
 
 
 //random color generator
+
+//colors
+
+//color change on hover
+
+//stop randomColor function from running when black is clicked
+function black() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "black";
+        });
+    });
+}
+
+//highly inefficient way of doing this, sorry
+
+function red() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "red";
+        });
+    });
+}
+
+function blue() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "blue";
+        });
+    });
+}
+
+function green() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "green";
+        });
+    });
+}
+
+function yellow() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "yellow";
+        });
+    });
+}
+
+function orange() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "orange";
+        });
+    });
+}
+
+function purple() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "purple";
+        });
+    });
+}
+
+function pink() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "pink";
+        });
+    });
+}
+
+function brown() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "brown";
+        });
+    });
+}
+
+function pink() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "pink";
+        });
+    });
+}
+
+function grey() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "grey";
+        });
+    });
+}
+
+function erase() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = "white";
+        });
+    });
+}
+
+function rainbow() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = randomColor();
+        });
+    });
+}
+
+function gradient() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = randomColor();
+            square.style.opacity = 0.1;
+        });
+    });
+}
+
+
+function bubble() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = randomColor();
+            square.style.borderRadius = "50%";
+        });
+    });
+}
+
+function glossy() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.opacity = 0.5;
+        });
+    });
+}
+
+function paintEntireRow() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.paddingLeft = "20px";
+            square.style.paddingRight = "20px";
+        });
+    });
+}
+
+function paintEntireColumn() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.paddingTop = "20px";
+            square.style.paddingBottom = "20px";
+        });
+    });
+}
+
+function disco() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = randomColor();
+            square.style.borderRadius = "50%";
+            square.style.paddingLeft = "20px";
+            square.style.paddingRight = "20px";
+            square.style.paddingTop = "20px";
+            square.style.paddingBottom = "20px";
+        });
+    });
+}
+
+function discoBall() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+            square.style.backgroundColor = randomColor();
+            square.style.borderRadius = "50%";
+            square.style.paddingLeft = "20px";
+            square.style.paddingRight = "20px";
+            square.style.paddingTop = "20px";
+            square.style.paddingBottom = "20px";
+            square.style.opacity = 0.5;
+        });
+    });
+}
+
+
+function discoBall2() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+                square.addEventListener('mouseover', () => {
+                    square.style.opacity = 0.5;
+                    square.style.backgroundColor = "silver";
+                    square.style.borderRadius = "50%";
+                    square.style.paddingLeft = "20px";
+                    square.style.paddingRight = "20px";
+                    square.style.paddingTop = "20px";
+                    square.style.paddingBottom = "20px";
+                    square.addEventListener('mouseover', () => {
+                        for (let i = 0; i < 12; i++) {
+                            for (let j = 0; j < 12; j++) {
+                                const square = document.createElement('div');
+                                square.classList.add('discoSquare');
+                                container.appendChild(square);
+                            }
+                        }
+                    });
+
+                });
+            });
+        }
