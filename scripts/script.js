@@ -315,3 +315,20 @@ function discoBall2() {
                 });
             });
         }
+
+function mineSweeperMode () {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', () => {
+ 
+        });
+    });
+} 
+
+//when clicked add class to all squares
+function addClassMineSweeper() {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+            square.classList.add('square','minesweeper');
+        });
+    }
